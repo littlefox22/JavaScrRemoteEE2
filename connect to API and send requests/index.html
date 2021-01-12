@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <script src="js/ajax.js"></script>
+        <title>AJAX DEMO</title>
+        <style>
+            body{font-family: 'Courier New', Courier, monospace;}
+            .test{float:left;background: #EEEEEE; width:46%;height:200px; margin:10px 1%; padding: 10px 1%;overflow-y:scroll}
+            .test table{width:100%;}
+            .test table td{border-bottom:1px solid #DDDDDD}
+            .test table th{background: #DDDDDD}
+            h4{padding: 60px 0; text-align: center;}
+            #four{padding-top: 20px;}
+            #newbutton{padding: 20px;}
+            #button4, #button5{margin-left: 10px;}
+        </style>
+    </head>
+    <body>
+        <h3>Place for the data</h3>
+        
+        <div id="test2" class="test">
+        <h4>Some text</h4>
+            
+
+        </div>
+
+        <h3>Click to fetch the data</h3>
+
+        <input type="button" id="button" value="1" />
+        <input type="button" id="button2" value="2" />
+        <input type="button" id="button3" value="3" />
+        <p id="demo"></p>
+        <script>
+            var element = document.querySelector('h4');
+            element.innerText = "I am new here ";
+
+            var newElement = document.createElement('button');
+            newElement.innerHTML = "<div id='newbutton'>Hey! I'm a new button</div>"
+            element.appendChild(newElement);
+
+            // we choose an existing element
+      var x = document.querySelector('#button3');
+      //we create a new element
+      var newOne = document.createElement('div');
+      //we place a new element before first child of the chosen element
+      x.insertAdjacentHTML('afterend', '<input type="button" id="button4" value="See what happens if you click me" />');
+      var newOne2 = document.createElement('div');
+      //we place a new element before first child of the chosen element
+      x.insertAdjacentHTML('afterend', '<input type="button" id="button5" value="Close" />');
+        </script>
+    </body>
+</html>
