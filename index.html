@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="js/ajax.js"></script>
+    <title>AJAX DEMO</title>
+    <style>
+      .test {
+        float: left;
+        background: #eeeeee;
+        width: 46%;
+        height: 200px;
+        margin: 10px 1%;
+        padding: 10px 1%;
+        overflow-y: scroll;
+      }
+      .test table {
+        width: 100%;
+      }
+      .test table td {
+        border-bottom: 1px solid #dddddd;
+      }
+      .test table th {
+        background: #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 class="text">Place for the data</h3>
+    <div id="test1" class="test">loading...</div>
+    <h3 class="text">Click to fetch the data</h3>
+    <input type="button" id="button" value="Fetch HTML" name="" />
+    
+    <!-- Old way but still valid <script>
+      var test_element = document.getElementById("test1");
+      console.log(test_element); // Because button is a variable and we're console logging that variable called 'button'.
+      var classNames = document.getElementsByClassName('text'); // find all elements with a class name text
+      console.log(classNames);
+      var allInputElements = document.getElementsByTagName('input');
+      console.log(allInputElements); //return all input elements
+    </script> -->
+    <!-- New way -->
+    <script>
+      var element = document.querySelectorAll('.text'); //you can select by class (enter . in front), tag, id (enter # in front) name
+      // queryselector is for ONE element. queryselectorall is for ALL elements
+      console.log(element);
+      var element = document.querySelectorAll('body > input');
+      console.log(element);
+
+      var element = document.querySelector('h3');
+      element.innerText = "I just got here"; //manipulating DOM using Javascript
+      var element = document.querySelector('#test1');
+      element.innerHTML = '<p>Just a new element</p>';
+      var element = document.querySelector('body');
+      element.style.backgroundColor = 'green';
+
+      var newElement = document.createElement('button');
+      newElement.innerText = "Hey! I'm a new button"
+      element.appendChild(newElement);
+
+      // we choose an existing element
+      var x = document.querySelector('#test1');
+      //we create a new element
+      var newOne = document.createElement('div');
+          newOne.innerText = "I was added here!!!!!!" 
+      //we place a new element before first child of the chosen element
+      x.insertBefore(newOne, x.firstChild);
+
+/*       var button = document.querySelector('#button');
+      button.addEventListener('click', function(){
+      alert("Please don't click here again!");//accepts 2 variables, the first name of the event, the second is when it happens
+      )}; */
+
+
+
+    </script>
+
+  </body>
+</html>
